@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:minHeight="60dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+>
+
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+    >
+        <TextView
+                android:id="@+id/item"
+                android:text="Item"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:fontFamily="@font/raleway_light"
+
+        />
+
+        <TextView
+                android:id="@+id/pricePerUnit"
+                android:text="Cost"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@+id/item"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="@font/dancing_script_medium"
+        />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+    >
+
+        <ImageView
+                android:id="@+id/updateItem"
+                android:padding="5dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_update"/>
+
+        <ImageView
+                android:id="@+id/deleteItem"
+                android:padding="5dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/updateItem"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_delete"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

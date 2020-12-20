@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:minHeight="40dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:weightSum="4">
+
+
+    <TextView
+            android:id="@+id/itemListProduct"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorPrimaryDark"
+    />
+
+    <TextView
+            android:id="@+id/itemListQuanity"
+            android:textSize="12sp"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@android:color/transparent"/>
+
+    <TextView
+            android:id="@+id/itemListTotal"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorAccent"
+            android:background="@android:color/transparent"/>
+
+
+    <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/deleteNewItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_delete"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

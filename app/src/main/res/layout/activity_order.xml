@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+>
+    <ImageView
+            android:id="@+id/imgLogoAddOrder"
+            android:src="@drawable/logo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+    />
+
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:text="Add New Order"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_below="@id/imgLogoAddOrder"
+            android:fontFamily="@font/dancing_script_medium"/>
+    <EditText
+            android:id="@+id/newCashier"
+            android:layout_width="match_parent"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:hint="Enter Cashier Name:"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:layout_below="@id/imgLogoAddOrder"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:fontFamily="@font/raleway_regular"
+    />
+
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:hint="Order Items:"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/newCashier"
+            android:fontFamily="@font/dancing_script_semibold"
+    />
+
+    <ListView
+            android:id="@+id/orderItemsListView"
+            android:layout_below="@id/newCashier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/colorPrimaryDark"
+            android:dividerHeight="1dip"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="10dp"
+            android:background="@drawable/border"
+            android:visibility="invisible"
+    />
+
+
+    <LinearLayout
+            android:id="@+id/populateItems"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/orderItemsListView"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+        <Spinner
+                android:paddingTop="5dp"
+                android:id="@+id/itemSpinner"
+                android:layout_width="0dp"
+                android:spinnerMode="dropdown"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:layout_gravity="center_vertical"
+        />
+
+        <EditText
+                android:id="@+id/itemQuanity"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:hint="Quantity eg 1.5"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textAlignment="center"
+                android:fontFamily="@font/raleway_light"
+                android:background="@android:color/transparent"/>
+        <EditText
+                android:id="@+id/itemTotal"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:hint="eg 1.5"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textAlignment="center"
+                android:background="@android:color/transparent"/>
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/newOrderTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:hint="Order Total:"
+            android:textColorHint="@color/colorAccent"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/populateItems"
+            android:fontFamily="@font/raleway_light"
+    />
+
+    <EditText
+            android:id="@+id/amountPaid"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:hint="Payment amount eg 2000"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textAlignment="center"
+            android:fontFamily="@font/raleway_light"
+            android:layout_below="@id/newOrderTotal"
+            android:background="@android:color/transparent"/>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/amountPaid"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:weightSum="2">
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:weightSum="1">
+
+            <ImageView
+                    android:id="@+id/add_new_item"
+                    android:src="@drawable/ic_add"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:tint="@color/colorPrimaryDark"
+            />
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="0.5"
+                      android:textSize="12sp"
+                      android:text="ADD ITEMS TO  ORDER"
+                      android:fontFamily="@font/dancing_script_regular"
+                      android:textColor="@color/colorPrimaryDark"
+                      android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:weightSum="1">
+
+            <ImageView
+                    android:id="@+id/save_order"
+                    android:src="@drawable/ic_save"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"/>
+
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="0.5"
+                      android:textSize="12sp"
+                      android:textColor="@color/colorPrimaryDark"
+                      android:text="SAVE ORDER"
+                      android:fontFamily="@font/dancing_script_regular"
+                      android:textAlignment="center"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

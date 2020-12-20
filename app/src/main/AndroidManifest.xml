@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.strathmore.ads.fruitMartApp">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/launch_icon"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".activities.DashboardActivity"
+                  android:label="@string/title_activity_dashboard"
+                  android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activities.ItemActivity"
+                android:label="@string/title_activity_item"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activities.OrderActivity"
+                android:label="@string/title_activity_order"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activities.SingleOrderActivity"
+                android:label="@string/title_activity_single_order"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activities.SplashActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

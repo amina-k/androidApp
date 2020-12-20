@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+    <ImageView
+            android:id="@+id/imgLogoSingleOrder"
+            android:src="@drawable/logo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+    />
+
+    <TextView
+            android:id="@+id/singleOrderCashierName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgLogoSingleOrder"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="Cashier Name"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/dancing_script_regular"
+    />
+
+    <TextView
+            android:id="@+id/singleOrderDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/singleOrderCashierName"
+            android:textSize="14sp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="12/07/08"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/raleway_light"
+    />
+
+    <TextView
+            android:id="@+id/ordersHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:hint="Order Items:"
+            android:layout_below="@id/singleOrderDate"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/dancing_script_regular"
+
+    />
+
+    <ListView
+            android:id="@+id/singleOrderListView"
+            android:layout_below="@id/ordersHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="120dp"
+            android:divider="@color/colorPrimaryDark"
+            android:dividerHeight="1dip"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="10dp"
+            android:background="@drawable/border"
+    />
+
+
+    <TextView
+            android:id="@+id/singleOrderTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:hint="Order Total:"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/raleway_regular"
+            android:layout_below="@id/singleOrderListView"
+    />
+    <TextView
+            android:id="@+id/singleAmountPaid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:hint="Amount Paid:"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/raleway_regular"
+            android:layout_below="@id/singleOrderTotal"
+    />
+    <TextView
+            android:id="@+id/singleBalanceDue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:hint="Balance Due:"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/raleway_regular"
+            android:layout_below="@id/singleAmountPaid"
+    />
+
+</RelativeLayout>

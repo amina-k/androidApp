@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fruit Mart</string>
+    <string name="title_activity_item">ItemActivity</string>
+    <string name="title_activity_order">OrderActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_single_order">SingleOrderActivity</string>
+</resources>

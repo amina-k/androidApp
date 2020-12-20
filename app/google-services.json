@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1048733419133",
+    "firebase_url": "https://fruitmart-ad2a6-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "fruitmart-ad2a6",
+    "storage_bucket": "fruitmart-ad2a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048733419133:android:5ea62f8302776a35219314",
+        "android_client_info": {
+          "package_name": "com.strathmore.ads.fruitMartApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048733419133-vafmocmqp7riv7i6p81qqn6rt5lnomk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf6CyCkOQUMF9S2em_szgR1nZr-KyGQdY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048733419133-vafmocmqp7riv7i6p81qqn6rt5lnomk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
