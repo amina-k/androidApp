@@ -32,11 +32,11 @@ class SingleOrderActivity : AppCompatActivity() {
         )
         val displayDate = LocalDateTime.parse(order.orderDate?.substringBefore(".")).format(formatter)
 
-        singleOrderTotal.text = "Order Total: Sh ${order.orderTotal!!}"
+        singleOrderTotal.text = "Order Total: KSh: ${order.orderTotal!!}"
         singleOrderCashierName.text = "Cashier: ${order.cashierName!!}"
         singleOrderDate.text = displayDate
-        singleAmountPaid.text = "Amount Paid: Sh ${order.amountPaid!!}"
-        singleBalanceDue.text = "Balance Due: Sh ${order.amountPaid - order.orderTotal}"
+        singleAmountPaid.text = "Amount Paid: KSh: ${order.amountPaid!!}"
+        singleBalanceDue.text = "Balance Due: KSh: ${order.amountPaid - order.orderTotal}"
 
 
     }

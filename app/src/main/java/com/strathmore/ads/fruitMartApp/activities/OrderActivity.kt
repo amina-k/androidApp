@@ -14,6 +14,7 @@ import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.extensions.jsonBody
+import com.google.gson.Gson
 import com.strathmore.ads.fruitMartApp.R
 import com.strathmore.ads.fruitMartApp.adapters.AddOrderAdapter
 import com.strathmore.ads.fruitMartApp.dtos.Item
@@ -47,7 +48,7 @@ class OrderActivity : AppCompatActivity() {
             ArrayAdapter(baseContext, R.layout.custom_spinner_item, itemsNameList)
 
 
-        Fuel.get("https://5bbf0b90a510.ngrok.io/fetchAllItems")
+        Fuel.get("https://09c5d121a16f.ngrok.io/fetchAllItems")
             .response { _, _, result ->
                 val (payload, error) = result
                 val newItems: Map<String, Any?> = mapper.readValue(payload!!)
@@ -151,7 +152,7 @@ class OrderActivity : AppCompatActivity() {
     private fun addOrderItem() {
         val quantity = itemQuanity.text.toString().toDouble()
         val body = """ {"name" : "${selectedItem.name}", "quantity" : ${quantity} } """
-        Fuel.post("https://5bbf0b90a510.ngrok.io/calcItemCost")
+        Fuel.post("https://09c5d121a16f.ngrok.io/calcItemCost")
             .jsonBody(body)
             .response { request, response, result ->
                 val (payload, error) = result
@@ -225,9 +226,11 @@ class OrderActivity : AppCompatActivity() {
         val body = mapper.convertValue(
             order,
             object : TypeReference<Map<String, Any>>() {}).toString()
+        val json = Gson().toJson(order)
+        println(json)
 
-        Fuel.post("https://5bbf0b90a510.ngrok.io/addOrder")
-            .jsonBody(body)
+        Fuel.post("https://09c5d121a16f.ngrok.io/addOrder")
+            .jsonBody(json)
             .response { request, response, result ->
                 val (payload, error) = result
                 val status: Map<String, String?> = mapper.readValue(payload!!)
@@ -236,14 +239,14 @@ class OrderActivity : AppCompatActivity() {
                         baseContext, "Successfully added $cashierName's order",
                         Toast.LENGTH_SHORT
                     ).show()
-                    startActivity(Intent(this, SingleOrderActivity::class.java))
+
+                    val intent = Intent(this, SingleOrderActivity::class.java)
+                    intent.putExtra("ORDER", order)
+                    startActivity(intent)
 
                 } else {
                     Toast.makeText(baseContext, "Sorry, something went wrong", Toast.LENGTH_SHORT).show()
                 }
             }
-
     }
-
-
 }

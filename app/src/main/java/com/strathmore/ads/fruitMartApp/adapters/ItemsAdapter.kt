@@ -41,7 +41,7 @@ class ItemsAdapter(
 
 
         itemNameView.text = item.name
-        priceView.setText("Ksh : ${item.price} per ${item.unit}")
+        priceView.setText("Ksh: ${item.price} per ${item.unit}")
 
         val updateImg = itemView.updateItem
 
@@ -71,7 +71,7 @@ class ItemsAdapter(
             .setPositiveButton("Proceed", DialogInterface.OnClickListener { _, _ ->
                 newPrice = input.text.toString().toInt()
                 val body = """ {"name" : "$name", "price" : "$newPrice"}  """
-                Fuel.post("https://5bbf0b90a510.ngrok.io/updateItem")
+                Fuel.post("https://09c5d121a16f.ngrok.io/updateItem")
                     .jsonBody(body)
                     .response { _, _, result ->
                         val (payload, error) = result
@@ -104,7 +104,7 @@ class ItemsAdapter(
         dialogBuilder.setMessage("Sure you want to delete?")
             .setCancelable(false)
             .setPositiveButton("Proceed", DialogInterface.OnClickListener { _, _ ->
-                Fuel.post("https://5bbf0b90a510.ngrok.io/deleteItem")
+                Fuel.post("https://09c5d121a16f.ngrok.io/deleteItem")
                     .jsonBody(body)
                     .response { _, _, result ->
                         val (payload, error) = result
@@ -134,7 +134,7 @@ class ItemsAdapter(
             {
                 this.clear()
 
-                Fuel.get("https://5bbf0b90a510.ngrok.io/fetchAllItems")
+                Fuel.get("https://09c5d121a16f.ngrok.io/fetchAllItems")
                     .response { request, response, result ->
                         val (payload, error) = result
                         val newItems: Map<String, Any?> = mapper.readValue(payload!!)

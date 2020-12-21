@@ -50,7 +50,7 @@ class ItemsFragment : Fragment() {
 
     private fun loadItems() {
 
-        Fuel.get("https://5bbf0b90a510.ngrok.io/fetchAllItems")
+        Fuel.get("https://09c5d121a16f.ngrok.io/fetchAllItems")
             .response { _, _, result ->
                 val (payload, error) = result
 

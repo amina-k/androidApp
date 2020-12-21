@@ -42,7 +42,7 @@ class OrdersAdapter(
 
         cashierView.text = order.cashierName
         dateView.text = displayDate
-        totalView.text = "Ksh ${order.orderTotal.toString()}"
+        totalView.text = "Ksh: ${order.orderTotal.toString()}"
         timeView.text = displayTime
 
         return orderView

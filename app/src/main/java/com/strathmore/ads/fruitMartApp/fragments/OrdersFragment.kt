@@ -47,8 +47,7 @@ class OrdersFragment : Fragment() {
         listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
 
             val selectedOrder: Orders = ordersList[position]
-//            val order = ArrayList<Orders>()
-//            order.add(selectedOrder)
+
             val intent = Intent(context, SingleOrderActivity::class.java)
             intent.putExtra("ORDER", selectedOrder)
             startActivity(intent)
@@ -65,7 +64,7 @@ class OrdersFragment : Fragment() {
 
     private fun loadOrders() {
 
-        Fuel.get("https://5bbf0b90a510.ngrok.io/fetchAllOrders")
+        Fuel.get("https://09c5d121a16f.ngrok.io/fetchAllOrders")
             .response { _, _, result ->
                 val (payload, error) = result
 

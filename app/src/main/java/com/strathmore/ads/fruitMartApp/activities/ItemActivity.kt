@@ -87,7 +87,7 @@ class ItemActivity : AppCompatActivity() {
 
     private fun fetchAllItems() {
 
-        Fuel.get("https://5bbf0b90a510.ngrok.io/fetchAllItems")
+        Fuel.get("https://09c5d121a16f.ngrok.io/fetchAllItems")
             .response { request, response, result ->
                 val (payload, error) = result
                 val items: Map<String, Any?> = mapper.readValue(payload!!)
@@ -102,7 +102,7 @@ class ItemActivity : AppCompatActivity() {
 
     private fun addItem(item: Item) {
         val body = """ {"name" : "${item.name}", "price" : "${item.price}","unit" : "${item.unit}"}"""
-        Fuel.post("https://5bbf0b90a510.ngrok.io/addItem")
+        Fuel.post("https://09c5d121a16f.ngrok.io/addItem")
             .jsonBody(body)
             .response { request, response, result ->
                 val (payload, error) = result
