@@ -48,6 +48,7 @@
             android:id="@+id/ordersListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxHeight="150dp"
             android:layout_below="@id/imgLogo"
             android:divider="@color/colorPrimaryDark"
             android:dividerHeight="1dip"

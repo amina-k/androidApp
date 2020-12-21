@@ -17,11 +17,13 @@
         </activity>
         <activity
                 android:name=".activities.ItemActivity"
+                android:noHistory="true"
                 android:label="@string/title_activity_item"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:name=".activities.OrderActivity"
+                android:noHistory="true"
                 android:label="@string/title_activity_order"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>

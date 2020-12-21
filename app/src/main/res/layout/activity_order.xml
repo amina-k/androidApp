@@ -56,6 +56,7 @@
             android:layout_below="@id/newCashier"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxHeight="150dp"
             android:divider="@color/colorPrimaryDark"
             android:dividerHeight="1dip"
             android:layout_marginTop="40dp"
