@@ -58,10 +58,10 @@ class ItemsAdapter(
         return itemView
     }
 
-    private fun updateItem(name:String, unit: String) {
+    private fun updateItem(name: String, unit: String) {
         var newPrice: Int = 0
 
-        val dialogBuilder = AlertDialog.Builder(context )
+        val dialogBuilder = AlertDialog.Builder(context)
         val input = EditText(context)
         input.inputType = InputType.TYPE_CLASS_NUMBER
         dialogBuilder.setView(input)
@@ -129,7 +129,7 @@ class ItemsAdapter(
 
     }
 
-    private fun reloadItems(){
+    private fun reloadItems() {
         Handler().postDelayed(
             {
                 this.clear()

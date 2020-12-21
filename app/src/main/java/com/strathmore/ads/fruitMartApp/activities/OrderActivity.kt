@@ -77,7 +77,7 @@ class OrderActivity : AppCompatActivity() {
                         view: View, position: Int, id: Long
                     ) {
                         val selectedItemName = itemsNameList[position]
-                        selectedItem = itemsList.filter{ it.name!!.equals(selectedItemName)}[0]
+                        selectedItem = itemsList.filter { it.name!!.equals(selectedItemName) }[0]
                     }
 
                     override fun onNothingSelected(parent: AdapterView<*>) {
@@ -96,37 +96,41 @@ class OrderActivity : AppCompatActivity() {
 
 
             //Data Validation
-                val validQuantity = checkNumeric(inputQuantity)
+            val validQuantity = checkNumeric(inputQuantity)
 
-                if (validQuantity) {
-                    var addNew = true
-                    for (orderItem in temporaryItemsList) {
+            if (validQuantity) {
+                var addNew = true
+                for (orderItem in temporaryItemsList) {
 
-                        if (orderItem.item!!.name == selectedItem.name) {
-                            Toast.makeText(baseContext, "Updating quantity and total for: $selectedItem.", Toast.LENGTH_SHORT).show()
+                    if (orderItem.item!!.name == selectedItem.name) {
+                        Toast.makeText(
+                            baseContext,
+                            "Updating quantity and total for: $selectedItem.",
+                            Toast.LENGTH_SHORT
+                        ).show()
 
-                            val newQuantity = inputQuantity.toDouble()
-                            val newTotal = newQuantity * orderItem.item.price!!
-                            orderTotal -= orderItem.total!!
-                            orderItem.quantity = newQuantity
-                            orderItem.total = newTotal
-                            addOrderAdapter!!.notifyDataSetChanged()
-                            orderTotal += orderItem.total!!
-                            newOrderTotal.text = "Order Total: Ksh. ${orderTotal}"
+                        val newQuantity = inputQuantity.toDouble()
+                        val newTotal = newQuantity * orderItem.item.price!!
+                        orderTotal -= orderItem.total!!
+                        orderItem.quantity = newQuantity
+                        orderItem.total = newTotal
+                        addOrderAdapter!!.notifyDataSetChanged()
+                        orderTotal += orderItem.total!!
+                        newOrderTotal.text = "Order Total: Ksh. ${orderTotal}"
 
-                            addNew = false
-                        }
-
+                        addNew = false
                     }
 
-                    if (addNew) {
-                        addOrderItem()
-                    }
-
-                } else {
-                    Toast.makeText(baseContext, "Please enter a valid quantity e.g 0.5", Toast.LENGTH_SHORT).show()
                 }
+
+                if (addNew) {
+                    addOrderItem()
+                }
+
+            } else {
+                Toast.makeText(baseContext, "Please enter a valid quantity e.g 0.5", Toast.LENGTH_SHORT).show()
             }
+        }
 
         val saveOrderView = save_order
         saveOrderView.setOnClickListener {
@@ -135,15 +139,24 @@ class OrderActivity : AppCompatActivity() {
 
             //Data Validation
             when {
-                enteredName.trim().isEmpty() -> Toast.makeText(baseContext, "Please enter the cashier's name.", Toast.LENGTH_SHORT).show()
+                enteredName.trim().isEmpty() -> Toast.makeText(
+                    baseContext,
+                    "Please enter the cashier's name.",
+                    Toast.LENGTH_SHORT
+                ).show()
                 paymentAmount.trim().isEmpty() -> {
                     Toast.makeText(baseContext, "Please enter the payment amount.", Toast.LENGTH_SHORT).show()
                     val validAmount = checkNumeric(paymentAmount)
-                    if(!validAmount){
-                        Toast.makeText(baseContext, "Please enter a valid payment amount e.g 2000", Toast.LENGTH_SHORT).show()
+                    if (!validAmount) {
+                        Toast.makeText(baseContext, "Please enter a valid payment amount e.g 2000", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 }
-                temporaryItemsList.isEmpty() -> Toast.makeText(baseContext, "Please select at least 1 item to order", Toast.LENGTH_SHORT).show()
+                temporaryItemsList.isEmpty() -> Toast.makeText(
+                    baseContext,
+                    "Please select at least 1 item to order",
+                    Toast.LENGTH_SHORT
+                ).show()
                 else -> addOrderDialog()
             }
         }
@@ -162,10 +175,13 @@ class OrderActivity : AppCompatActivity() {
                     val data = status["data"] as Map<String, String>
                     val total = data["totalCost"]!!.toDouble()
 
-                    temporaryItemsList.add(OrderItem(
-                        item = selectedItem,
-                        quantity = quantity,
-                        total = total))
+                    temporaryItemsList.add(
+                        OrderItem(
+                            item = selectedItem,
+                            quantity = quantity,
+                            total = total
+                        )
+                    )
                     orderTotal += total
 
                     newOrderTotal.text = "Order Total: Ksh. ${orderTotal}"
@@ -204,7 +220,7 @@ class OrderActivity : AppCompatActivity() {
 
     }
 
-    private fun checkNumeric(value:  String):Boolean {
+    private fun checkNumeric(value: String): Boolean {
 
         var numeric = true
         try {
